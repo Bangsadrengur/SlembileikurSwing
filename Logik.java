@@ -1,7 +1,10 @@
 public class Logik
 {
+    // Fastayrðing gagna:
+    // number er slembitala til ágiskunar.
     int number;
 
+    // Number er stillt, hún liggur á bilinu 1..10.
     public Logik()
     {
         number = new java.util.Random().nextInt(9) + 1;

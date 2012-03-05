@@ -4,6 +4,16 @@ import java.awt.event.*;
 
 public class Vidmot
 {
+    // Fastayrðing gagna:
+    // frame er rammi. guess er ágiskunarhnappur,
+    // newGame er frumstillingarhnappur og 
+    // closeGame er hnappur til að hætta keyrslu.
+    // statusLabel heldur utan um stöðu leiks
+    // og tjáir notanda hana. entryBox er 
+    // innsláttarsvæði fyrir ágiskanir.
+    // tries heldur utan um fjölda tilrauna.
+    // logik heldur utan um slembna tölu til
+    // ágiskunar.
     JFrame frame;
     JButton guess;
     JButton newGame;
@@ -13,6 +23,8 @@ public class Vidmot
     Logik logik;
     int tries;
 
+    // Gluggi smíðaður og virkni forstillt. Engin tilraun til spurningar 
+    // hefur verið gerð.
     public Vidmot()
     {
         frame = new JFrame("Slembileikur");
@@ -44,6 +56,8 @@ public class Vidmot
         frame.setVisible(true);
     }
 
+    // Ýtt hefur verið á New Game hnapp og gluggaumhverfi
+    // og slembitala eru öll endurstillt.
     private class newGameAction extends AbstractAction
     {
         public void actionPerformed(ActionEvent evt)
@@ -55,6 +69,7 @@ public class Vidmot
         }
     }
 
+    // Ýtt hefur verið á Close hnapp, forriti verður lokað.
     private class closeGameAction extends AbstractAction
     {
         public void actionPerformed(ActionEvent evt)
@@ -62,6 +77,11 @@ public class Vidmot
             System.exit(0);
         }
     }
+
+    // Ýtt hefur verið á Guess hnappinn. statusLabel er uppfærður
+    // í samræmi við útkomu ágiskunar. Öll inntök í inntaksbox
+    // sem ekki eru af sniði int skila villum en trufla annars
+    // ekki virkni eða stöðu leiks.
     private class guessAction extends AbstractAction
     {
         public void actionPerformed(ActionEvent evt)
@@ -83,6 +103,7 @@ public class Vidmot
         }
     }
 
+    // Forrit gangsett.
     public static void main(String[] args)
     {
         Vidmot vidmot = new Vidmot();
